@@ -10,7 +10,7 @@ English | [简体中文](README.zh-CN.md)
 
 Analyze rendered web UIs and rebuild observable design-system assets as editable Figma assets.
 
-[Product overview](#product-overview) · [Download Public Beta](https://github.com/SuJiaYi27/UI-Anatomist/releases/latest) · [Installation](docs/installation.md) · [Privacy & safety](docs/privacy-and-safety.md)
+[Product overview](#product-overview) · [Download Public Beta](https://github.com/SuJiaYi27/UI-Anatomist/releases/tag/v0.1.0-beta.1) · [Installation](docs/installation.md) · [Privacy & safety](docs/privacy-and-safety.md)
 
 ## Product overview
 
