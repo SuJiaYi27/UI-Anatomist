@@ -10,7 +10,7 @@
 
 分析已经渲染出来的网页界面，并把其中能够观察到的设计系统素材，重建为可编辑的 Figma 素材。
 
-[产品介绍](#产品概述) · [下载公开测试版](https://github.com/SuJiaYi27/UI-Anatomist/releases/latest) · [安装说明](docs/installation.md) · [隐私与安全](docs/privacy-and-safety.md)
+[产品介绍](#产品概述) · [下载公开测试版](https://github.com/SuJiaYi27/UI-Anatomist/releases/tag/v0.1.0-beta.1) · [安装说明](docs/installation.md) · [隐私与安全](docs/privacy-and-safety.md)
 
 ## 产品概述
 
