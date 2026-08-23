@@ -32,7 +32,7 @@
     "@types/node": "latest",
     "esbuild": "latest",
     "jsdom": "latest",
-    "pako": "^0.2.9",
+    "pako": "^3.0.1",
     "typescript": "latest",
     "vitest": "latest"
   }
