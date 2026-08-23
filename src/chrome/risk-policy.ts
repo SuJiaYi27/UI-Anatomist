@@ -30,7 +30,13 @@ const blockedRoute = /(?:\/|[?&=])(delete|remove|clear|reset|archive|logout|sign
 const settingsRoute = /^\/(?:settings|preferences)(?:\/[^/?#]+)*\/?$/i
 const safeShareOpenerLabel = /^(?:share|分享)$/i
 const safeNavigationLabel = /\b(home|search|explore|discover|browse|library|plugins?|plugin store|extensions?|projects?|project status|status|overview|docs?|documentation|help|history|dashboard|workspace|view|profile|personal page)\b|首页|主页|搜索|探索|发现|浏览|插件库|插件|扩展|项目状态|项目|状态|概览|文档|帮助|历史|工作台|查看|个人主页|个人资料/i
-const safeNavigationRoute = /^\/(?:home|search|explore|discover|browse|library|plugins?|plugin-store|extensions?|projects?|project|status|overview|docs?|documentation|help|history|dashboard|workspace|view|gpts?|tools|profile|me)?(?:\/(?:home|search|explore|discover|browse|library|plugins?|plugin-store|extensions?|projects?|project|status|overview|docs?|documentation|help|history|dashboard|workspace|view|gpts?|tools|profile|me))*\/?$/i
+const safeNavigationSegments = new Set([
+  'home', 'search', 'explore', 'discover', 'browse', 'library',
+  'plugin', 'plugins', 'plugin-store', 'extension', 'extensions',
+  'project', 'projects', 'status', 'overview', 'doc', 'docs',
+  'documentation', 'help', 'history', 'dashboard', 'workspace',
+  'view', 'gpt', 'gpts', 'tool', 'tools', 'profile', 'me'
+])
 const safeProjectDetailRoute = /^\/(?:projects?|workspace)\/[^/]+\/?$/i
 const safeNestedProjectRoute = /^\/g\/[^/]+\/project\/?$/i
 const safeConversationRoute = /^\/(?:(?:c|chats?|conversations?)\/[a-z0-9][a-z0-9_-]{5,}|g\/[a-z0-9][a-z0-9_-]{5,}\/c\/[a-z0-9][a-z0-9_-]{5,})\/?$/i
@@ -49,7 +55,16 @@ function hasSafeNavigationRoute(url: string | undefined): boolean {
   if (!url) return false
   try {
     const pathname = new URL(url).pathname
-    return safeNavigationRoute.test(pathname) ||
+    const pathWithoutTrailingSlash = pathname.length > 1 && pathname.endsWith('/')
+      ? pathname.slice(0, -1)
+      : pathname
+    const segments = pathWithoutTrailingSlash === '/'
+      ? []
+      : pathWithoutTrailingSlash.slice(1).split('/')
+    const hasOnlySafeSegments = segments.every(segment =>
+      safeNavigationSegments.has(segment.toLowerCase())
+    )
+    return hasOnlySafeSegments ||
       safeProjectDetailRoute.test(pathname) ||
       safeNestedProjectRoute.test(pathname)
   } catch {
