@@ -39,7 +39,7 @@ UI-Anatomist 只处理网页中实际呈现、能够观察到的设计证据。
 
 ## 产品展示
 
-这里会在 GitHub 正式发布时放入已经确认的 56 秒实际演示视频，完整展示从 Chrome 扫描到 Figma 导入的流程。视频中出现的 JSON 已经打码，底层的真实扫描 JSON 不会公开。
+[观看 56 秒 Chrome 扫描与 Figma 导入实际演示](https://github.com/SuJiaYi27/UI-Anatomist/releases/download/v0.1.0-beta.1/ui-anatomist-showcase-v0.1.0-beta.1.mp4)。视频完整展示从 Chrome 扫描到 Figma 导入的流程；其中出现的 JSON 已经打码，底层的真实扫描 JSON 不会公开。
 
 > **展示说明：** OpenAI Help Center 仅作为实际演示对象。OpenAI 的产品也参与并帮助了这个项目的设计与开发过程，我非常感谢这些工具为项目提供的帮助。UI-Anatomist 是一个独立的开源项目，与 OpenAI 或 Figma 不存在合作、赞助或背书关系。
 
