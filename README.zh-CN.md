@@ -39,7 +39,7 @@ UI-Anatomist 只处理网页中实际呈现、能够观察到的设计证据。
 
 ## 产品展示
 
-<video src="https://github.com/user-attachments/assets/df1d2370-34c9-4c42-8605-5d74f66b405c" width="100%"></video>
+<video src="https://github.com/SuJiaYi27/UI-Anatomist/releases/download/v0.1.0-beta.1/ui-anatomist-showcase-v0.1.0-beta.1.mp4" width="100%"></video>
 
 这段 56 秒的实际演示完整展示了从 Chrome 扫描到 Figma 导入的流程。视频中出现的 JSON 已经打码，底层的真实扫描 JSON 不会公开。
 
