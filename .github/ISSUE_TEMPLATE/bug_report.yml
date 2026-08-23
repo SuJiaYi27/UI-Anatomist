@@ -1,0 +1,50 @@
+name: Bug report
+description: Report a reproducible problem using sanitized evidence
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not attach credentials, private URLs, account information, sensitive JSON, or unreviewed screenshots. Follow SECURITY.md for vulnerabilities.
+  - type: input
+    id: release
+    attributes:
+      label: Release version
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Tested environment
+      description: Operating system, Chrome version, Figma Desktop version, and affected part.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Sanitized reproduction and evidence
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I used matching Chrome and Figma folders from the same Release.
+          required: true
+        - label: I removed private and third-party-sensitive content.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true

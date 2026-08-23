@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>UI-Anatomist</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="eyebrow">DESIGN SYSTEM</span>
+        <h1>UI-Anatomist</h1>
+        <p id="status" aria-live="polite">Ready to scan this site</p>
+      </header>
+      <button id="smart-scan" class="primary" type="button">UI-Anatomist</button>
+      <div id="ready-actions" class="actions" hidden>
+        <button id="copy-json" class="primary" type="button">Copy JSON</button>
+        <button id="download-json" class="secondary" type="button">Download JSON</button>
+      </div>
+      <p class="note">Starts at current page · safe design-system scan</p>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

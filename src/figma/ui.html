@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-chinese: "PingFang SC", "Microsoft YaHei", sans-serif;
+        --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; padding: 20px; color: var(--figma-color-text, #2c2c2c); background: var(--figma-color-bg, #fff); }
+      h1 { margin: 0 0 8px; font-size: 16px; font-weight: 700; line-height: 24px; }
+      p { margin: 0 0 16px; color: var(--figma-color-text-secondary, #757575); font: 400 12px/18px var(--font-chinese); }
+      textarea { width: 100%; height: 230px; resize: none; padding: 12px; border: 1px solid var(--figma-color-border, #e6e6e6); border-radius: 8px; color: var(--figma-color-text, #2c2c2c); background: var(--figma-color-bg-secondary, #f5f5f5); font: 400 11px/16px var(--font-mono); outline: none; }
+      textarea::placeholder { color: var(--figma-color-text-secondary, #757575); font: 400 11px/16px var(--font-chinese); opacity: 1; }
+      textarea:focus { border-color: var(--figma-color-border-selected, #0d99ff); box-shadow: 0 0 0 1px var(--figma-color-border-selected, #0d99ff); }
+      button { width: 100%; height: 36px; margin-top: 12px; border: 0; border-radius: 8px; color: var(--figma-color-text-onbrand, #fff); background: var(--figma-color-bg-brand, #0d99ff); font: 600 12px/16px Inter, sans-serif; cursor: pointer; }
+      button:disabled { opacity: .45; cursor: default; }
+      #status { min-height: 34px; margin-top: 10px; color: var(--figma-color-text-secondary, #757575); font-family: var(--font-chinese); font-size: 11px; line-height: 16px; }
+      #status.error { color: var(--figma-color-text-danger, #f24822); }
+    </style>
+  </head>
+  <body>
+    <h1>UI-Anatomist</h1>
+    <p>粘贴 Chrome 插件复制的 JSON，然后直接导入。</p>
+    <textarea id="json" aria-label="UI-Anatomist JSON" placeholder="在这里粘贴 JSON" spellcheck="false"></textarea>
+    <button id="import" disabled>Import JSON</button>
+    <div id="status" role="status" aria-live="polite"></div>
+    <script>
+      const input = document.getElementById('json')
+      const button = document.getElementById('import')
+      const status = document.getElementById('status')
+      const contentStatus = () => input.value.trim().length === 0 ? 'empty' : 'populated'
+      const setUiStatus = nextStatus => { document.body.dataset.uiStatus = nextStatus }
+
+      setUiStatus(contentStatus())
+
+      input.addEventListener('input', () => {
+        button.disabled = input.value.trim().length === 0
+        status.textContent = ''
+        status.className = ''
+        setUiStatus(contentStatus())
+      })
+
+      input.addEventListener('focus', () => setUiStatus('focus'))
+      input.addEventListener('blur', () => setUiStatus(contentStatus()))
+
+      button.addEventListener('click', () => {
+        button.disabled = true
+        status.textContent = '正在导入…'
+        status.className = ''
+        setUiStatus('importing')
+        parent.postMessage({ pluginMessage: { type: 'IMPORT_JSON', json: input.value } }, '*')
+      })
+
+      onmessage = event => {
+        const message = event.data.pluginMessage
+        if (!message) return
+        button.disabled = input.value.trim().length === 0
+        status.textContent = message.message
+        status.className = message.type === 'IMPORT_ERROR' ? 'error' : ''
+        setUiStatus(message.type === 'IMPORT_ERROR' ? 'error' : 'success')
+      }
+    </script>
+  </body>
+</html>

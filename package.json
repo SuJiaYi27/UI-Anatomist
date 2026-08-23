@@ -1,0 +1,39 @@
+{
+  "name": "ui-anatomist",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "packageManager": "npm@11.16.0",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:chrome && npm run build:figma && npm run build:validation",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "npm run typecheck:chrome && npm run typecheck:figma",
+    "typecheck:chrome": "tsc --noEmit -p tsconfig.json",
+    "typecheck:figma": "tsc --noEmit -p src/figma/tsconfig.json",
+    "build:chrome": "node scripts/build-chrome.mjs",
+    "build:figma": "node scripts/build-figma.mjs",
+    "build:validation": "esbuild src/shared/schema.ts --bundle --platform=node --format=esm --outfile=dist/validation/schema.js",
+    "audit:public-tree": "node scripts/audit-public-tree.mjs",
+    "audit:public-tree:staging": "node scripts/audit-public-tree.mjs --allow-placeholders",
+    "release:package": "node scripts/package-release.mjs",
+    "verify": "npm test && npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "fontkit": "^2.0.4",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "latest",
+    "@types/chrome": "latest",
+    "@types/fontkit": "^2.0.9",
+    "@types/jsdom": "latest",
+    "@types/node": "latest",
+    "esbuild": "latest",
+    "jsdom": "latest",
+    "pako": "^0.2.9",
+    "typescript": "latest",
+    "vitest": "latest"
+  }
+}

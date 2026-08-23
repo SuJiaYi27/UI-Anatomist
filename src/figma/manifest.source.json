@@ -1,0 +1,12 @@
+{
+  "name": "UI-Anatomist",
+  "id": "smart-scan-typography-importer-local",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  }
+}

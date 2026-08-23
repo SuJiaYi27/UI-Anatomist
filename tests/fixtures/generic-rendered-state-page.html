@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body { margin: 0; color: #111; background: #fff; }
+      .scroll-region { height: 100px; overflow-y: auto; }
+      .hover-shell {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border: 0;
+        border-radius: 8px;
+        background: transparent;
+      }
+      .hover-surface {
+        display: grid;
+        place-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+      }
+      .hover-shell:hover .hover-surface {
+        background: rgb(238, 238, 238);
+      }
+      .settings-panel {
+        height: 100px;
+        overflow-y: auto;
+        box-shadow: 0 7px 19px rgba(0, 0, 0, .25);
+      }
+    </style>
+  </head>
+  <body>
+    <main id="primary" class="scroll-region">
+      <button aria-label="Inspect vector">
+        <svg id="svg-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4 12h16"/>
+        </svg>
+      </button>
+      <button aria-label="Configure">
+        <span
+          id="font-icon"
+          data-mat-icon-type="font"
+          data-mat-icon-name="settings"
+          style="font-family:'Material Symbols Outlined';display:inline-block"
+        >settings</span>
+      </button>
+      <button id="hover-control" class="hover-shell" aria-label="Add">
+        <span class="hover-surface">
+          <svg id="hover-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 4v16M4 12h16"/>
+          </svg>
+        </span>
+      </button>
+      <div style="height:500px"></div>
+    </main>
+
+    <button id="settings-trigger" aria-haspopup="dialog" aria-expanded="false">
+      Settings
+    </button>
+    <section id="settings-panel" class="settings-panel" role="dialog" hidden>
+      <button id="forbidden-toggle" role="switch" aria-checked="false">Theme</button>
+      <button id="forbidden-save">Save</button>
+      <input id="file-picker" type="file">
+      <label for="file-picker">Upload file</label>
+      <div style="height:300px"></div>
+    </section>
+  </body>
+</html>

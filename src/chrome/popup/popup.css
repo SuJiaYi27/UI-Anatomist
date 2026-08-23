@@ -1,0 +1,66 @@
+:root {
+  color-scheme: light;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #181818;
+  background: #fff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 320px;
+  margin: 0;
+}
+
+main { padding: 24px; }
+
+main:has(#ready-actions:not([hidden])) { height: 386px; }
+
+header { margin-bottom: 24px; }
+main:has(#ready-actions:not([hidden])) header { margin-bottom: 16px; }
+
+.eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #6f6f6b;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 12px;
+  letter-spacing: 0.12em;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+#status, .note {
+  margin: 0;
+  color: #6f6f6b;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  cursor: pointer;
+}
+
+.primary { color: #fff; background: #181818; }
+.primary:not(:disabled):hover { background: #30302e; }
+.secondary { color: #181818; border-color: #d8d8d4; background: #fff; }
+.secondary:not(:disabled):hover { background: #f0f0ed; }
+button:disabled { cursor: default; }
+.actions { display: grid; gap: 8px; margin-top: 12px; }
+.note { margin-top: 16px; text-align: center; font-size: 11px; }
+[hidden] { display: none !important; }

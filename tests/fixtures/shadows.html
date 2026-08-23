@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <body>
+    <div data-visible id="outer-a" style="box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px 0px">private alpha</div>
+    <button data-visible id="outer-b" style="box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px 0px">private beta</button>
+    <div data-visible id="inner" style="box-shadow: inset 0px -1px 0px #ffffff">private gamma</div>
+    <p data-visible id="text" style="text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2)">private delta</p>
+    <div data-visible id="filter" style="filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 4px) drop-shadow(0px -1px 0px #000)">private epsilon</div>
+    <img data-visible alt="private brand" style="box-shadow: 0 20px 40px rgba(0,0,0,.5)" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=">
+    <svg data-visible style="filter:drop-shadow(0 10px 20px #000)"></svg>
+    <div data-visible role="img" style="box-shadow:0 9px 18px #000">private image role</div>
+    <div data-visible class="brand-logo" style="box-shadow:0 8px 16px #000">private logo</div>
+    <div data-visible hidden style="box-shadow:0 7px 14px #000">private hidden</div>
+    <div data-visible data-smart-scan-overlay="true" style="box-shadow:0 6px 12px #000">Scanning</div>
+    <div data-visible style="box-shadow:0 0 0 rgba(0,0,0,0)">private transparent</div>
+    <div data-visible style="box-shadow:0 0 0 rgba(0,0,0,1)">private zero</div>
+  </body>
+</html>
