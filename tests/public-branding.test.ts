@@ -79,7 +79,7 @@ describe('UI-Anatomist public branding', () => {
     expect(chinese).toContain('[English](README.md) | 简体中文')
 
     for (const value of [
-      'https://github.com/SuJiaYi27/UI-Anatomist/releases/latest',
+      'https://github.com/SuJiaYi27/UI-Anatomist/releases/tag/v0.1.0-beta.1',
       'https://github.com/SuJiaYi27/UI-Anatomist/issues',
       'https://github.com/SuJiaYi27/UI-Anatomist/discussions',
       'Copyright 2026 Su JiaYi.'
