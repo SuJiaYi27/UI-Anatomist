@@ -37,7 +37,7 @@ The project does not claim to recover a website's private source code, original 
 
 ## Showcase
 
-<video src="https://github.com/SuJiaYi27/UI-Anatomist/releases/download/v0.1.0-beta.1/ui-anatomist-showcase-v0.1.0-beta.1.mp4" width="100%"></video>
+<video src="https://github.com/user-attachments/assets/ac6fd797-7a7c-49e9-b28d-7ed16db89fe1" width="100%"></video>
 
 This 56-second demonstration shows the complete workflow from a Chrome scan to a Figma import. The JSON shown in the recording is blurred, and the underlying scan JSON is not published.
 
