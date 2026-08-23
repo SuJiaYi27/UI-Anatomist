@@ -260,6 +260,22 @@ describe('classifyCandidate', () => {
     })).toBe('uncertain')
   })
 
+  it('rejects a long almost-safe navigation route without excessive backtracking', () => {
+    const path = `/${Array.from({ length: 26 }, () => 'project').join('/')}/!`
+    const startedAt = performance.now()
+
+    const risk = classifyCandidate({
+      kind: 'link',
+      label: 'Home',
+      sameOrigin: true,
+      reversible: true,
+      url: `https://example.com${path}`
+    })
+
+    expect(risk).toBe('uncertain')
+    expect(performance.now() - startedAt).toBeLessThan(100)
+  })
+
   it.each([
     '/profile/edit',
     '/account',
