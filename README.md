@@ -37,7 +37,7 @@ The project does not claim to recover a website's private source code, original 
 
 ## Showcase
 
-An approved 56-second end-to-end Chrome scan and Figma import demonstration will be attached here during GitHub publication. The JSON shown in the recording is blurred, and the underlying scan JSON is not published.
+[Watch the 56-second end-to-end Chrome scan and Figma import demonstration](https://github.com/SuJiaYi27/UI-Anatomist/releases/download/v0.1.0-beta.1/ui-anatomist-showcase-v0.1.0-beta.1.mp4). The JSON shown in the recording is blurred, and the underlying scan JSON is not published.
 
 > **Showcase note:** The OpenAI Help Center is shown only as a demonstration target. OpenAI products also supported the design and development process, and I am grateful for the tools that helped make this project possible. UI-Anatomist is an independent open-source project. This project is not affiliated with, sponsored by, or endorsed by OpenAI or Figma.
 
