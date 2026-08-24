@@ -12,7 +12,7 @@ tests/        Anonymous automated tests and fixtures
 
 ## Verified environment
 
-The private candidate was verified with Node.js 24.19.0 and npm 11.16.0. The current `.nvmrc` and `packageManager` values are provisional reproducibility pins for local review, not a supported-version promise. The final public staging environment and tested compatibility will be recorded before publication.
+UI-Anatomist Public Beta v0.1.0-beta.1 was verified with Node.js 24.19.0 and npm 11.16.0. The current `.nvmrc` and `packageManager` values pin the reproducible verification environment; they do not define minimum supported versions or imply broader compatibility guarantees.
 
 ## Install and verify
 
