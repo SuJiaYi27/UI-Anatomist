@@ -1,9 +1,5 @@
 English | [简体中文](README.zh-CN.md)
 
-<p align="center">
-  <img src="assets/anatomist-poster-light.jpg" width="100%" alt="Anatomist — Analyze rendered web UIs and rebuild observable design-system assets as editable Figma assets.">
-</p>
-
 # UI-Anatomist
 
 **Public Beta**
