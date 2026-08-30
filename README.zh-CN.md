@@ -1,9 +1,5 @@
 [English](README.md) | 简体中文
 
-<p align="center">
-  <img src="assets/anatomist-poster-light.jpg" width="100%" alt="Anatomist——分析已经渲染出来的网页界面，并把其中能够观察到的设计系统素材重建为可编辑的 Figma 素材。">
-</p>
-
 # UI-Anatomist
 
 **公开测试版（Public Beta）**
